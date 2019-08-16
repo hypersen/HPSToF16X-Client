@@ -1,0 +1,109 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.24.2.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: joker joker, hypersen, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.24.1
+Toolchain Path:  d:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 5 (build 528)
+Assembler:       Armasm.exe V5.06 update 5 (build 528)
+Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
+Library Manager: ArmAr.exe V5.06 update 5 (build 528)
+Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
+CPU DLL:         SARMCM3.DLL V5.24.1
+Dialog DLL:      DCM.DLL V1.16.0.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
+Dialog DLL:      TCM.DLL V1.32.0.0
+ 
+<h2>Project:</h2>
+D:\stm32project\HPS16XXTB\trunk\MDK-ARM\HPS16XXTB.uvprojx
+Project File Date:  05/30/2018
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'd:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'HPS16XXTB'
+compiling stm32f1xx_it.c...
+compiling i2c.c...
+compiling gpio.c...
+compiling stm32f1xx_hal_msp.c...
+compiling can.c...
+compiling usart.c...
+compiling CRC16_CCITT.c...
+compiling main.c...
+../Src/main.c(131): warning:  #177-D: variable "crc"  was declared but never referenced
+  	uint16_t crc = 0x0000;
+../Src/main.c(132): warning:  #177-D: variable "crc_p"  was declared but never referenced
+  	uint16_t crc_p = 0x00000;
+../Src/main.c(498): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+  	uart1_read(buff, 8, 200);//可能会有启动信息(Hypersen)，要滤掉
+../Src/main.c(499): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+  	if(sensor_get_DeviceInfo(buff, 	
+SE_UART1) == 1)
+../Src/main.c(509): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+  	uart2_read(buff, 8, 200);	//可能会有启动信息(Hypersen)，要滤掉
+../Src/main.c(510): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+  	if(sensor_get_DeviceInfo(buff, 	
+SE_UART2) == 1)
+../Src/main.c(532): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+  		HAL_UART_Receive_IT(&huart2 ,buff, 2);
+../Src/main.c(537): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+  			if(HAL_OK == HAL_UART_Receive(&huart2, buff+2, 0x0d, 10))
+../Src/main.c(539): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
+  				if(packet_parser(buff, data_buff) == 1)
+../Src/main.c: 9 warnings, 0 errors
+compiling util.c...
+assembling startup_stm32f103xb.s...
+compiling tim.c...
+compiling system_stm32f1xx.c...
+compiling sensor.c...
+compiling stm32f1xx_hal_uart.c...
+compiling oled.c...
+compiling stm32f1xx_hal_i2c.c...
+compiling stm32f1xx_hal_rcc_ex.c...
+compiling stm32f1xx_hal_flash_ex.c...
+compiling stm32f1xx_hal_flash.c...
+compiling stm32f1xx_hal.c...
+compiling stm32f1xx_hal_gpio.c...
+compiling stm32f1xx_hal_tim_ex.c...
+compiling stm32f1xx_hal_tim.c...
+compiling stm32f1xx_hal_pwr.c...
+compiling stm32f1xx_hal_gpio_ex.c...
+compiling stm32f1xx_hal_dma.c...
+compiling stm32f1xx_hal_cortex.c...
+compiling stm32f1xx_hal_rcc.c...
+compiling stm32f1xx_hal_can.c...
+linking...
+Program Size: Code=21096 RO-data=844 RW-data=24 ZI-data=1464  
+FromELF: creating hex file...
+"HPS16XXTB\HPS16XXTB.axf" - 0 Error(s), 9 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.1.1.pack
+                ARM.CMSIS.5.1.1
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.0.2
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.1.1.0.pack
+                Keil.STM32F1xx_DFP.1.1.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_HPS16XXTB
+  d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.1.1\CMSIS\Include
+  d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.0.2
+Build Time Elapsed:  00:00:08
+</pre>
+</body>
+</html>
